@@ -58,14 +58,24 @@ namespace EventManager.Dal.Migrations
                 values: new object[] { 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 0, null, "Ajla", "Bise" });
 
             migrationBuilder.InsertData(
-                table: "Events",
-                columns: new[] { "Id", "CreatedAt", "CreatedById", "Description", "Name" },
-                values: new object[] { 1, new DateTime(2021, 4, 4, 16, 33, 31, 890, DateTimeKind.Local).AddTicks(1063), 1, "Description of online seminar", "Online seminars" });
+                table: "Users",
+                columns: new[] { "Id", "CreatedAt", "CreatedById", "CreatedByUserId", "FirstName", "LastName" },
+                values: new object[] { 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 0, null, "Arman", "Bise" });
+
+            migrationBuilder.InsertData(
+                table: "Users",
+                columns: new[] { "Id", "CreatedAt", "CreatedById", "CreatedByUserId", "FirstName", "LastName" },
+                values: new object[] { 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 0, null, "Mahir", "Skula" });
 
             migrationBuilder.InsertData(
                 table: "Events",
                 columns: new[] { "Id", "CreatedAt", "CreatedById", "Description", "Name" },
-                values: new object[] { 2, new DateTime(2021, 4, 4, 16, 33, 31, 896, DateTimeKind.Local).AddTicks(6532), 1, "Description of online seminar II", "Online seminars II" });
+                values: new object[] { 1, new DateTime(2021, 4, 4, 17, 45, 22, 873, DateTimeKind.Local).AddTicks(2654), 1, "Description of online seminar", "Online seminars" });
+
+            migrationBuilder.InsertData(
+                table: "Events",
+                columns: new[] { "Id", "CreatedAt", "CreatedById", "Description", "Name" },
+                values: new object[] { 2, new DateTime(2021, 4, 4, 17, 45, 22, 881, DateTimeKind.Local).AddTicks(4374), 1, "Description of online seminar II", "Online seminars II" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Events_CreatedById",

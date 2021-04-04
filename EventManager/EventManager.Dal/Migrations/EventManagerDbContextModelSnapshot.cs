@@ -49,7 +49,7 @@ namespace EventManager.Dal.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2021, 4, 4, 16, 33, 31, 890, DateTimeKind.Local).AddTicks(1063),
+                            CreatedAt = new DateTime(2021, 4, 4, 17, 45, 22, 873, DateTimeKind.Local).AddTicks(2654),
                             CreatedById = 1,
                             Description = "Description of online seminar",
                             Name = "Online seminars"
@@ -57,7 +57,7 @@ namespace EventManager.Dal.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2021, 4, 4, 16, 33, 31, 896, DateTimeKind.Local).AddTicks(6532),
+                            CreatedAt = new DateTime(2021, 4, 4, 17, 45, 22, 881, DateTimeKind.Local).AddTicks(4374),
                             CreatedById = 1,
                             Description = "Description of online seminar II",
                             Name = "Online seminars II"
@@ -100,6 +100,22 @@ namespace EventManager.Dal.Migrations
                             CreatedById = 0,
                             FirstName = "Ajla",
                             LastName = "Bise"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedById = 0,
+                            FirstName = "Arman",
+                            LastName = "Bise"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedById = 0,
+                            FirstName = "Mahir",
+                            LastName = "Skula"
                         });
                 });
 

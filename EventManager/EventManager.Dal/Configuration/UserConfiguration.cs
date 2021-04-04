@@ -17,7 +17,9 @@ namespace EventManager.Dal.Configuration
 
             builder
                 .HasData(new List<User> { 
-                    new User { Id = 1, FirstName = "Ajla", LastName = "Bise" }
+                    new User { Id = 1, FirstName = "Ajla", LastName = "Bise" },
+                    new User { Id = 2, FirstName = "Arman", LastName = "Bise" },
+                    new User { Id = 3, FirstName = "Mahir", LastName = "Skula" }
                 });
         }
     }

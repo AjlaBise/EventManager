@@ -11,7 +11,6 @@ namespace EventManager.Dal.ViewModel
         public string Description { get; set; }
 
 
-
         public EventDto()
         {
         }

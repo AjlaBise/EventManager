@@ -5983,8 +5983,7 @@
       "Microsoft.EntityFrameworkCore.Design >= 5.0.4",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.4",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.4",
-      "Swashbuckle.AspNetCore >= 6.1.1",
-      "Swashbuckle.AspNetCore.Swagger >= 6.1.1"
+      "Swashbuckle.AspNetCore >= 6.1.1"
     ]
   },
   "packageFolders": {
@@ -6050,10 +6049,6 @@
             "version": "[5.0.4, )"
           },
           "Swashbuckle.AspNetCore": {
-            "target": "Package",
-            "version": "[6.1.1, )"
-          },
-          "Swashbuckle.AspNetCore.Swagger": {
             "target": "Package",
             "version": "[6.1.1, )"
           }
