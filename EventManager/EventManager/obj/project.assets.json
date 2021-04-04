@@ -1605,7 +1605,10 @@
         },
         "runtime": {
           "bin/placeholder/EventManager.Dal.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },

@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
+
+html{
+    background: linear-gradient(to right bottom , #8FBAF3, rgba(212, 134, 243, 0.849));
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-attachment: fixed;
+}

@@ -1,0 +1,26 @@
+.wrapper{
+display: flex;
+width: 100%;
+justify-content: space-between;
+margin-bottom: 2%;
+}
+.navbar-header{
+    font-family: "Playfair Display";
+    font-size: 1.8em;
+    color:white;
+    text-shadow: 0 0 4px rgb(141, 64, 230);
+}
+.btn-container{
+    display: flex;
+}
+.btn{
+    width: 120px;
+    padding: 5px 0;
+    background-color: rgb(146, 79, 223);
+    border-radius: 10px;
+    border: none;
+    color: white;
+    margin:0 8px;
+    box-shadow: 1px 1px 5px 3px  rgb(106, 82, 133);
+    cursor: pointer;
+}

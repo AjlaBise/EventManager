@@ -12,10 +12,10 @@ namespace EventManager.Dal.Repositories
     {
         private readonly EventManagerDbContext _eventManagerDbContext;
 
+
         public SqlServerEventRepository(EventManagerDbContext eventManagerDbContext)
         {
             _eventManagerDbContext = eventManagerDbContext;
-
         }
 
         public async Task<EventViewModel> GetById(int id, CancellationToken cancellationToken = default)
@@ -38,7 +38,7 @@ namespace EventManager.Dal.Repositories
                 Id = e.Id,
                 Name = e.Name,
                 Description = e.Description,
-                CreatedById = 1
+                CreatedById = e.CreateById,
             };
 
             await _eventManagerDbContext.Events.AddAsync(eventDomain, cancellationToken);

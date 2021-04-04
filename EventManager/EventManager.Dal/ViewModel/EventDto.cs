@@ -10,6 +10,7 @@ namespace EventManager.Dal.ViewModel
 
         public string Description { get; set; }
 
+        public int CreateById { get; set; }
 
         public EventDto()
         {
@@ -20,6 +21,7 @@ namespace EventManager.Dal.ViewModel
             Id = e.Id;
             Name = e.Name;
             Description = e.Description;
+            CreateById = e.CreatedById;
         }
     }
 }
