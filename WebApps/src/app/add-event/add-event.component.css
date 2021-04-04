@@ -30,6 +30,9 @@
 .form-update input::placeholder{
     padding-left: 5px;
 }
+.form-update input:focus, textarea:focus{
+    border:2px solid white;
+}
 .form-update textarea::placeholder{
     padding-left: 5px;
     padding-top: 10px;

@@ -24,3 +24,6 @@ margin-bottom: 2%;
     box-shadow: 1px 1px 5px 3px  rgb(106, 82, 133);
     cursor: pointer;
 }
+.btn:focus{
+    outline: none;
+}
