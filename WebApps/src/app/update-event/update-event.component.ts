@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UpdateEventComponent implements OnInit {
 
+  public name=" ";
+  public description=" ";
+  public user=" ";
+  public startDate="";
+  public endDate="";
   constructor() { }
 
   ngOnInit(): void {

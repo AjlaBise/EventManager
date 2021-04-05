@@ -1,20 +1,35 @@
 <div class="wrapper">
     <form class="form-update">
         <label>Name</label>
-        <input type="text" placeholder="Name"/>
+        <input [(ngModel)]="name" type="text" placeholder="Name" [ngModelOptions]="{standalone: true}" />
         <label>Description</label>
-        <textarea placeholder="Description"></textarea>
+        <textarea [(ngModel)]="description" placeholder="Description" [ngModelOptions]="{standalone: true}"></textarea>
         <label>User</label>
-        <input type="text" placeholder="User"/>
+        <input [(ngModel)]="user" type="text" placeholder="User" [ngModelOptions]="{standalone: true}" />
         <label>Start date</label>
-        <input type="date" />
+        <input [(ngModel)]="startDate" type="date" [ngModelOptions]="{standalone: true}" />
         <label>End date</label>
-        <input type="date" />
+        <input [(ngModel)]="endDate" type="date" [ngModelOptions]="{standalone: true}" />
         <div class="btn-container">
-        <button class="btn">Save</button>
-    </div>
+            <button class="btn">Save</button>
+        </div>
     </form>
-    <div class="card-event">
-        <app-event-card-update></app-event-card-update>
+    <div class="wrapper-card">
+        <div class="text-container">
+            <p>NAME : </p>
+            <p>{{name}}</p>
+            <p>DESCRIPTION : </p>
+            <p>{{description}}</p>
+            <div class="bottom-div">
+                <p>USER : </p>
+                <p>START DATE : </p>
+                <p>END DATE : </p>            
+            </div>
+            <div class="value-div">
+                <p>{{user}}</p>
+                <p>{{startDate}}</p>
+                <p>{{endDate}}</p>
+            </div>
+        </div>
     </div>
 </div>
