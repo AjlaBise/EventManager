@@ -22,6 +22,9 @@ namespace EventManager
         {
             services.AddControllers();
             services.AddSwaggerGen();
+            services.AddCors(options => options.AddPolicy("AllowAll", p => p.AllowAnyOrigin()
+                                                                    .AllowAnyMethod()
+                                                                     .AllowAnyHeader()));
 
             var connectionString = Configuration.GetConnectionString("eventManager");
             services.AddDbContext<EventManagerDbContext>(builder => builder.UseSqlServer(connectionString));
@@ -47,7 +50,7 @@ namespace EventManager
             app.UseRouting();
 
             app.UseAuthorization();
-
+            app.UseCors("AllowAll");
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
