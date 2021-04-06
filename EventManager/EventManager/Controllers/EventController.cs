@@ -72,5 +72,12 @@ namespace EventManager.Controllers
             var events = await _eventRepository.SearchByStartDate(startDate);
             return Ok(events);
         }
+
+        [HttpGet("{endDate}")]
+        public async Task<IActionResult> SearchByEndDate(DateTime endDate)
+        {
+            var events = await _eventRepository.SearchByEndDate(endDate);
+            return Ok(events);
+        }
     }
 }

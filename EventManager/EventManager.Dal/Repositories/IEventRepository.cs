@@ -24,6 +24,7 @@ namespace EventManager.Dal.Repositories
 
         Task<EventViewModel> SearchByStartDate(DateTime startDate, CancellationToken cancellationToken = default);
 
+        Task<EventViewModel> SearchByEndDate(DateTime endDate, CancellationToken cancellationToken = default);
 
     }
 }
