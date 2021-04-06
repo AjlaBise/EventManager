@@ -13,6 +13,8 @@ namespace EventManager.Dal.ViewModel
 
         public int CreateById { get; set; }
 
+        public string ModifiedByUser { get; set; }
+
         public DateTime StartDate { get; set; }
 
         public DateTime StartTime { get; set; }
@@ -42,6 +44,7 @@ namespace EventManager.Dal.ViewModel
             EndTime = e.EndTime;
             ModifiedAt = e.ModifiedAt;
             CreatedAt = e.CreatedAt;
+            ModifiedByUser = e.ModifiedByUser;
         }
     }
 }

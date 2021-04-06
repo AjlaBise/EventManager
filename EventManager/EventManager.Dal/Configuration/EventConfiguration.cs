@@ -21,29 +21,31 @@ namespace EventManager.Dal.Configuration
                 .HasForeignKey(p => p.CreatedById);
 
             builder
-                .HasData(new List<Event> { 
-                    new Event { 
-                              Id = 1, 
+                .HasData(new List<Event> {
+                    new Event {
+                              Id = 1,
                               Name = "Online seminars",
-                              Description = "Description of online seminar", 
-                              CreatedAt = DateTime.Now, 
-                              CreatedById = 1, 
-                              StartDate = DateTime.Now, 
-                              StartTime=DateTime.Now.ToLocalTime() , 
-                              EndDate = DateTime.Now.AddDays(6), 
-                              EndTime=DateTime.Now.ToLocalTime() 
+                              Description = "Description of online seminar",
+                              CreatedAt = DateTime.Now,
+                              CreatedById = 1,
+                              ModifiedByUser = "Ajla Bise",
+                              StartDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day).AddDays(2),
+                              StartTime = DateTime.Now.ToLocalTime(),
+                              EndDate =  new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day).AddDays(6),
+                              EndTime =DateTime.Now.ToLocalTime().AddHours(4) ,
                     },
 
-                    new Event { 
-                            Id = 2, 
-                            Name = "Online seminars II", 
-                            Description = "Description of online seminar II", 
-                            CreatedAt = DateTime.Now, 
+                    new Event {
+                            Id = 2,
+                            Name = "Online seminars II",
+                            Description = "Description of online seminar II",
+                            CreatedAt = DateTime.Now,
                             CreatedById = 2 ,
-                            StartDate = DateTime.Now,  
-                            StartTime=DateTime.Now.ToLocalTime(), 
-                            EndDate = DateTime.Now.AddDays(10), 
-                            EndTime=DateTime.Now.ToLocalTime()  
+                            ModifiedByUser = "Ajla Bise",
+                            StartDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day).AddDays(2),
+                            StartTime = DateTime.Now.ToLocalTime().AddHours(1) ,
+                            EndDate =  new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day).AddDays(10),
+                            EndTime = DateTime.Now.ToLocalTime().AddHours(2) ,
                     },
 
                      new Event {
@@ -52,10 +54,11 @@ namespace EventManager.Dal.Configuration
                               Description = "Description of online seminar",
                               CreatedAt = DateTime.Now,
                               CreatedById = 1,
-                              StartDate = DateTime.Now.AddDays(2),
-                              StartTime=DateTime.Now.ToLocalTime().AddHours(4) ,
-                              EndDate = DateTime.Now.AddDays(6),
-                              EndTime=DateTime.Now.ToLocalTime().AddHours(6) 
+                              ModifiedByUser = "Ajla Bise",
+                              StartDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day),
+                              StartTime = DateTime.Now.ToLocalTime().AddHours(4) ,
+                              EndDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day).AddDays(5),
+                              EndTime= DateTime.Now.ToLocalTime().AddHours(5) ,
                      },
                 });
         }

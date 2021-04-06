@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EventManager.Dal.Migrations
 {
     [DbContext(typeof(EventManagerDbContext))]
-    [Migration("20210406191704_Init")]
+    [Migration("20210406234334_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -46,6 +46,9 @@ namespace EventManager.Dal.Migrations
                     b.Property<DateTime>("ModifiedAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("ModifiedByUser")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -66,41 +69,44 @@ namespace EventManager.Dal.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2021, 4, 6, 21, 17, 3, 700, DateTimeKind.Local).AddTicks(87),
+                            CreatedAt = new DateTime(2021, 4, 7, 1, 43, 33, 531, DateTimeKind.Local).AddTicks(8189),
                             CreatedById = 1,
                             Description = "Description of online seminar",
-                            EndDate = new DateTime(2021, 4, 12, 21, 17, 3, 704, DateTimeKind.Local).AddTicks(596),
-                            EndTime = new DateTime(2021, 4, 6, 21, 17, 3, 704, DateTimeKind.Local).AddTicks(981),
+                            EndDate = new DateTime(2021, 4, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new DateTime(2021, 4, 7, 5, 43, 33, 536, DateTimeKind.Local).AddTicks(6170),
                             ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ModifiedByUser = "Ajla Bise",
                             Name = "Online seminars",
-                            StartDate = new DateTime(2021, 4, 6, 21, 17, 3, 703, DateTimeKind.Local).AddTicks(9664),
-                            StartTime = new DateTime(2021, 4, 6, 21, 17, 3, 704, DateTimeKind.Local).AddTicks(145)
+                            StartDate = new DateTime(2021, 4, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartTime = new DateTime(2021, 4, 7, 1, 43, 33, 536, DateTimeKind.Local).AddTicks(4350)
                         },
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2021, 4, 6, 21, 17, 3, 704, DateTimeKind.Local).AddTicks(1443),
+                            CreatedAt = new DateTime(2021, 4, 7, 1, 43, 33, 536, DateTimeKind.Local).AddTicks(7086),
                             CreatedById = 2,
                             Description = "Description of online seminar II",
-                            EndDate = new DateTime(2021, 4, 16, 21, 17, 3, 704, DateTimeKind.Local).AddTicks(1519),
-                            EndTime = new DateTime(2021, 4, 6, 21, 17, 3, 704, DateTimeKind.Local).AddTicks(1532),
+                            EndDate = new DateTime(2021, 4, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new DateTime(2021, 4, 7, 3, 43, 33, 536, DateTimeKind.Local).AddTicks(7208),
                             ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ModifiedByUser = "Ajla Bise",
                             Name = "Online seminars II",
-                            StartDate = new DateTime(2021, 4, 6, 21, 17, 3, 704, DateTimeKind.Local).AddTicks(1479),
-                            StartTime = new DateTime(2021, 4, 6, 21, 17, 3, 704, DateTimeKind.Local).AddTicks(1491)
+                            StartDate = new DateTime(2021, 4, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartTime = new DateTime(2021, 4, 7, 2, 43, 33, 536, DateTimeKind.Local).AddTicks(7171)
                         },
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2021, 4, 6, 21, 17, 3, 704, DateTimeKind.Local).AddTicks(1548),
+                            CreatedAt = new DateTime(2021, 4, 7, 1, 43, 33, 536, DateTimeKind.Local).AddTicks(7226),
                             CreatedById = 1,
                             Description = "Description of online seminar",
-                            EndDate = new DateTime(2021, 4, 12, 21, 17, 3, 704, DateTimeKind.Local).AddTicks(1587),
-                            EndTime = new DateTime(2021, 4, 7, 3, 17, 3, 704, DateTimeKind.Local).AddTicks(1592),
+                            EndDate = new DateTime(2021, 4, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new DateTime(2021, 4, 7, 6, 43, 33, 536, DateTimeKind.Local).AddTicks(7264),
                             ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ModifiedByUser = "Ajla Bise",
                             Name = "Online seminars",
-                            StartDate = new DateTime(2021, 4, 8, 21, 17, 3, 704, DateTimeKind.Local).AddTicks(1553),
-                            StartTime = new DateTime(2021, 4, 7, 1, 17, 3, 704, DateTimeKind.Local).AddTicks(1557)
+                            StartDate = new DateTime(2021, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartTime = new DateTime(2021, 4, 7, 5, 43, 33, 536, DateTimeKind.Local).AddTicks(7245)
                         });
                 });
 
@@ -134,6 +140,9 @@ namespace EventManager.Dal.Migrations
 
                     b.Property<DateTime>("ModifiedAt")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedByUser")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");

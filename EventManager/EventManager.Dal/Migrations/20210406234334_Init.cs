@@ -17,6 +17,7 @@ namespace EventManager.Dal.Migrations
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ModifiedByUser = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedById = table.Column<int>(type: "int", nullable: false),
                     CreatedByUserId = table.Column<int>(type: "int", nullable: true),
                     StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -45,6 +46,7 @@ namespace EventManager.Dal.Migrations
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ModifiedByUser = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedById = table.Column<int>(type: "int", nullable: false),
                     StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     StartTime = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -64,33 +66,33 @@ namespace EventManager.Dal.Migrations
 
             migrationBuilder.InsertData(
                 table: "Users",
-                columns: new[] { "Id", "CreatedAt", "CreatedById", "CreatedByUserId", "EndDate", "EndTime", "FirstName", "LastName", "ModifiedAt", "StartDate", "StartTime" },
-                values: new object[] { 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 0, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Ajla", "Bise", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) });
+                columns: new[] { "Id", "CreatedAt", "CreatedById", "CreatedByUserId", "EndDate", "EndTime", "FirstName", "LastName", "ModifiedAt", "ModifiedByUser", "StartDate", "StartTime" },
+                values: new object[] { 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 0, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Ajla", "Bise", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) });
 
             migrationBuilder.InsertData(
                 table: "Users",
-                columns: new[] { "Id", "CreatedAt", "CreatedById", "CreatedByUserId", "EndDate", "EndTime", "FirstName", "LastName", "ModifiedAt", "StartDate", "StartTime" },
-                values: new object[] { 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 0, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Arman", "Bise", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) });
+                columns: new[] { "Id", "CreatedAt", "CreatedById", "CreatedByUserId", "EndDate", "EndTime", "FirstName", "LastName", "ModifiedAt", "ModifiedByUser", "StartDate", "StartTime" },
+                values: new object[] { 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 0, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Arman", "Bise", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) });
 
             migrationBuilder.InsertData(
                 table: "Users",
-                columns: new[] { "Id", "CreatedAt", "CreatedById", "CreatedByUserId", "EndDate", "EndTime", "FirstName", "LastName", "ModifiedAt", "StartDate", "StartTime" },
-                values: new object[] { 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 0, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Mahir", "Skula", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) });
+                columns: new[] { "Id", "CreatedAt", "CreatedById", "CreatedByUserId", "EndDate", "EndTime", "FirstName", "LastName", "ModifiedAt", "ModifiedByUser", "StartDate", "StartTime" },
+                values: new object[] { 3, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 0, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Mahir", "Skula", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) });
 
             migrationBuilder.InsertData(
                 table: "Events",
-                columns: new[] { "Id", "CreatedAt", "CreatedById", "Description", "EndDate", "EndTime", "ModifiedAt", "Name", "StartDate", "StartTime" },
-                values: new object[] { 1, new DateTime(2021, 4, 6, 21, 17, 3, 700, DateTimeKind.Local).AddTicks(87), 1, "Description of online seminar", new DateTime(2021, 4, 12, 21, 17, 3, 704, DateTimeKind.Local).AddTicks(596), new DateTime(2021, 4, 6, 21, 17, 3, 704, DateTimeKind.Local).AddTicks(981), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Online seminars", new DateTime(2021, 4, 6, 21, 17, 3, 703, DateTimeKind.Local).AddTicks(9664), new DateTime(2021, 4, 6, 21, 17, 3, 704, DateTimeKind.Local).AddTicks(145) });
+                columns: new[] { "Id", "CreatedAt", "CreatedById", "Description", "EndDate", "EndTime", "ModifiedAt", "ModifiedByUser", "Name", "StartDate", "StartTime" },
+                values: new object[] { 1, new DateTime(2021, 4, 7, 1, 43, 33, 531, DateTimeKind.Local).AddTicks(8189), 1, "Description of online seminar", new DateTime(2021, 4, 13, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 4, 7, 5, 43, 33, 536, DateTimeKind.Local).AddTicks(6170), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Ajla Bise", "Online seminars", new DateTime(2021, 4, 9, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 4, 7, 1, 43, 33, 536, DateTimeKind.Local).AddTicks(4350) });
 
             migrationBuilder.InsertData(
                 table: "Events",
-                columns: new[] { "Id", "CreatedAt", "CreatedById", "Description", "EndDate", "EndTime", "ModifiedAt", "Name", "StartDate", "StartTime" },
-                values: new object[] { 3, new DateTime(2021, 4, 6, 21, 17, 3, 704, DateTimeKind.Local).AddTicks(1548), 1, "Description of online seminar", new DateTime(2021, 4, 12, 21, 17, 3, 704, DateTimeKind.Local).AddTicks(1587), new DateTime(2021, 4, 7, 3, 17, 3, 704, DateTimeKind.Local).AddTicks(1592), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Online seminars", new DateTime(2021, 4, 8, 21, 17, 3, 704, DateTimeKind.Local).AddTicks(1553), new DateTime(2021, 4, 7, 1, 17, 3, 704, DateTimeKind.Local).AddTicks(1557) });
+                columns: new[] { "Id", "CreatedAt", "CreatedById", "Description", "EndDate", "EndTime", "ModifiedAt", "ModifiedByUser", "Name", "StartDate", "StartTime" },
+                values: new object[] { 3, new DateTime(2021, 4, 7, 1, 43, 33, 536, DateTimeKind.Local).AddTicks(7226), 1, "Description of online seminar", new DateTime(2021, 4, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 4, 7, 6, 43, 33, 536, DateTimeKind.Local).AddTicks(7264), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Ajla Bise", "Online seminars", new DateTime(2021, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 4, 7, 5, 43, 33, 536, DateTimeKind.Local).AddTicks(7245) });
 
             migrationBuilder.InsertData(
                 table: "Events",
-                columns: new[] { "Id", "CreatedAt", "CreatedById", "Description", "EndDate", "EndTime", "ModifiedAt", "Name", "StartDate", "StartTime" },
-                values: new object[] { 2, new DateTime(2021, 4, 6, 21, 17, 3, 704, DateTimeKind.Local).AddTicks(1443), 2, "Description of online seminar II", new DateTime(2021, 4, 16, 21, 17, 3, 704, DateTimeKind.Local).AddTicks(1519), new DateTime(2021, 4, 6, 21, 17, 3, 704, DateTimeKind.Local).AddTicks(1532), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Online seminars II", new DateTime(2021, 4, 6, 21, 17, 3, 704, DateTimeKind.Local).AddTicks(1479), new DateTime(2021, 4, 6, 21, 17, 3, 704, DateTimeKind.Local).AddTicks(1491) });
+                columns: new[] { "Id", "CreatedAt", "CreatedById", "Description", "EndDate", "EndTime", "ModifiedAt", "ModifiedByUser", "Name", "StartDate", "StartTime" },
+                values: new object[] { 2, new DateTime(2021, 4, 7, 1, 43, 33, 536, DateTimeKind.Local).AddTicks(7086), 2, "Description of online seminar II", new DateTime(2021, 4, 17, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 4, 7, 3, 43, 33, 536, DateTimeKind.Local).AddTicks(7208), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Ajla Bise", "Online seminars II", new DateTime(2021, 4, 9, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2021, 4, 7, 2, 43, 33, 536, DateTimeKind.Local).AddTicks(7171) });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Events_CreatedById",
