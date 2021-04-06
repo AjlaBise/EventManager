@@ -1,6 +1,7 @@
 ﻿using EventManager.Dal.Repositories;
 using EventManager.Dal.ViewModel;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Threading.Tasks;
 
 namespace EventManager.Controllers
@@ -62,6 +63,13 @@ namespace EventManager.Controllers
         public async Task<IActionResult> SearchName(string name)
         {
             var events = await _eventRepository.SearchName(name);
+            return Ok(events);
+        }
+
+        [HttpGet("{startDate}")]
+        public async Task<IActionResult> SearchByStartDate(DateTime startDate)
+        {
+            var events = await _eventRepository.SearchByStartDate(startDate);
             return Ok(events);
         }
     }

@@ -80,6 +80,21 @@ namespace EventManager.Dal.Repositories
 
         }
 
+
+
+        public async Task<EventViewModel> SearchByStartDate(DateTime startDate, CancellationToken cancellationToken = default)
+        {
+            const int maxTop = 10;
+
+            var eventNameCollection = await _eventManagerDbContext.Events
+                .Where(b => b.StartDate == startDate)
+                .ToListAsync(cancellationToken);
+
+            var collection = eventNameCollection.Take(maxTop).ToList();
+            return new EventViewModel(collection);
+
+        }
+
         public async Task<EventViewModel> SearchName(string name, CancellationToken cancellationToken = default)
         {
             const int maxTop = 10;

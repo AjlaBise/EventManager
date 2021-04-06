@@ -1,4 +1,5 @@
 ﻿using EventManager.Dal.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
@@ -20,6 +21,9 @@ namespace EventManager.Dal.Repositories
         Task<bool> Remove(int id, CancellationToken cancellationToken = default);
 
         Task<EventViewModel> SearchName(string name, CancellationToken cancellationToken = default);
+
+        Task<EventViewModel> SearchByStartDate(DateTime startDate, CancellationToken cancellationToken = default);
+
 
     }
 }
