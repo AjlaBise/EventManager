@@ -1,12 +1,12 @@
-<div class="main-wrapper">
+<div class="main-wrapper" *ngFor="let event of events">
     <div class="wrapper">
-        <div class="text-container" *ngFor="let event of events">
+        <div class="text-container" >
             <p>{{event.name}}</p>
             <p>{{event.description}}</p>
             <p>{{event.createBy}}</p>
         </div>
         <div class="event-buttons">
-            <button class="btn">Delete</button>
+            <button class="btn" (click)="deleteEvent(event.id)">Delete</button>
             <button class="btn" routerLink="/update-event">Update</button>
         </div>
     </div>

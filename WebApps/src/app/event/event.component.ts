@@ -23,4 +23,13 @@ export class EventComponent implements OnInit {
     });
     console.log(this.events);
   }
+
+  deleteEvent(id: number) {
+    let r = confirm("Do you want to delete event?");
+    if (r) {
+      this.eventService.deleteEvent(id).subscribe();
+      this.getEvents();
+      location.reload();
+    }
+  }
 }
