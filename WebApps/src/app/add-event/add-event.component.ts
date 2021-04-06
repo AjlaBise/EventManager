@@ -17,7 +17,7 @@ export class AddEventComponent implements OnInit {
     this.checkoutForm = formBuilder.group({
       name: '',
       description: '',
-      createById: null,
+    
     });
    }
 

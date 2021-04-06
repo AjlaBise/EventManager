@@ -1,4 +1,5 @@
 ﻿using EventManager.Dal.Domain;
+using System;
 
 namespace EventManager.Dal.ViewModel
 {
@@ -12,6 +13,19 @@ namespace EventManager.Dal.ViewModel
 
         public int CreateById { get; set; }
 
+        public DateTime StartDate { get; set; }
+
+        public DateTime StartTime { get; set; }
+
+        public DateTime EndDate { get; set; }
+
+        public DateTime EndTime { get; set; }
+
+        public DateTime CreatedAt { get; set; }
+
+        public DateTime ModifiedAt { get; set; }
+
+
         public EventDto()
         {
         }
@@ -22,6 +36,12 @@ namespace EventManager.Dal.ViewModel
             Name = e.Name;
             Description = e.Description;
             CreateById = e.CreatedById;
+            StartDate = e.StartDate;
+            StartTime = e.StartTime;
+            EndDate = e.EndDate;
+            EndTime = e.EndTime;
+            ModifiedAt = e.ModifiedAt;
+            CreatedAt = e.CreatedAt;
         }
     }
 }

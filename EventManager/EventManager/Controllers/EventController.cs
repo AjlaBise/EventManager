@@ -22,6 +22,13 @@ namespace EventManager.Controllers
             return Ok(e);
         }
 
+        [HttpGet("{name}")]
+        public async Task<IActionResult> GetEventsPeriod(string name)
+        { 
+            var e = await _eventRepository.GetEventsPeriod(name);
+            return Ok(e);
+        }
+
         [HttpGet]
         public async Task<IActionResult> GetTopTen()
         {

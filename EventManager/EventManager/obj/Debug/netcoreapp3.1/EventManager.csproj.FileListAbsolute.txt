@@ -142,3 +142,5 @@ C:\Users\Ajla\Desktop\EventManager\EventManager\EventManager\bin\Debug\netcoreap
 C:\Users\Ajla\Desktop\EventManager\EventManager\EventManager\obj\Debug\netcoreapp3.1\EventManager.csproj.CoreCompileInputs.cache
 C:\Users\Ajla\Desktop\EventManager\EventManager\EventManager\obj\Debug\netcoreapp3.1\EventManager.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Ajla\Desktop\EventManager\EventManager\EventManager\obj\Debug\netcoreapp3.1\EventManager.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Ajla\Desktop\EventManager\EventManager\EventManager\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\Users\Ajla\Desktop\EventManager\EventManager\EventManager\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

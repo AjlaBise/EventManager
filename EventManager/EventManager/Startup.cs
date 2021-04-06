@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using AutoMapper;
 
 namespace EventManager
 {
@@ -23,9 +24,10 @@ namespace EventManager
             services.AddCors(options => options.AddPolicy("AllowAll", p => p.AllowAnyOrigin()
                                                                     .AllowAnyMethod()
                                                                      .AllowAnyHeader()));
+            services.AddAutoMapper(typeof(Startup));
             services.AddControllers();
             services.AddSwaggerGen();
-            
+           
 
             var connectionString = Configuration.GetConnectionString("eventManager");
             services.AddDbContext<EventManagerDbContext>(builder => builder.UseSqlServer(connectionString));

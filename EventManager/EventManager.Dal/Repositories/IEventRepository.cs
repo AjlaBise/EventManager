@@ -1,4 +1,5 @@
 ﻿using EventManager.Dal.ViewModel;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -7,6 +8,8 @@ namespace EventManager.Dal.Repositories
     public interface IEventRepository
     {
         Task<EventViewModel> GetTopTen(CancellationToken cancellationToken = default);
+
+        Task<EventViewModel> GetEventsPeriod(string eventName, CancellationToken cancellationToken = default);
 
         Task<EventViewModel> GetById(int id, CancellationToken cancellationToken = default);
 
@@ -17,5 +20,6 @@ namespace EventManager.Dal.Repositories
         Task<bool> Remove(int id, CancellationToken cancellationToken = default);
 
         Task<EventViewModel> SearchName(string name, CancellationToken cancellationToken = default);
+
     }
 }

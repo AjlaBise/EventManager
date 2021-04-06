@@ -22,8 +22,41 @@ namespace EventManager.Dal.Configuration
 
             builder
                 .HasData(new List<Event> { 
-                    new Event { Id = 1, Name = "Online seminars", Description = "Description of online seminar", CreatedAt = DateTime.Now, CreatedById = 1 },
-                    new Event { Id = 2, Name = "Online seminars II", Description = "Description of online seminar II", CreatedAt = DateTime.Now, CreatedById = 1 },
+                    new Event { 
+                              Id = 1, 
+                              Name = "Online seminars",
+                              Description = "Description of online seminar", 
+                              CreatedAt = DateTime.Now, 
+                              CreatedById = 1, 
+                              StartDate = DateTime.Now, 
+                              StartTime=DateTime.Now.ToLocalTime() , 
+                              EndDate = DateTime.Now.AddDays(6), 
+                              EndTime=DateTime.Now.ToLocalTime() 
+                    },
+
+                    new Event { 
+                            Id = 2, 
+                            Name = "Online seminars II", 
+                            Description = "Description of online seminar II", 
+                            CreatedAt = DateTime.Now, 
+                            CreatedById = 2 ,
+                            StartDate = DateTime.Now,  
+                            StartTime=DateTime.Now.ToLocalTime(), 
+                            EndDate = DateTime.Now.AddDays(10), 
+                            EndTime=DateTime.Now.ToLocalTime()  
+                    },
+
+                     new Event {
+                              Id = 3,
+                              Name = "Online seminars",
+                              Description = "Description of online seminar",
+                              CreatedAt = DateTime.Now,
+                              CreatedById = 1,
+                              StartDate = DateTime.Now.AddDays(2),
+                              StartTime=DateTime.Now.ToLocalTime().AddHours(4) ,
+                              EndDate = DateTime.Now.AddDays(6),
+                              EndTime=DateTime.Now.ToLocalTime().AddHours(6) 
+                     },
                 });
         }
     }
