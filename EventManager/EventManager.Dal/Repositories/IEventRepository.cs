@@ -15,5 +15,7 @@ namespace EventManager.Dal.Repositories
         Task Update(EventDto eventDto, CancellationToken cancellationToken = default);
 
         Task<bool> Remove(int id, CancellationToken cancellationToken = default);
+
+        Task<EventViewModel> SearchName(string name, CancellationToken cancellationToken = default);
     }
 }

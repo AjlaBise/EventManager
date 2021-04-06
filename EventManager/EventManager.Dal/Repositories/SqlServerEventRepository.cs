@@ -57,6 +57,18 @@ namespace EventManager.Dal.Repositories
 
         }
 
+        public async Task<EventViewModel> SearchName(string name, CancellationToken cancellationToken = default)
+        {
+            const int maxTop = 10;
+
+            var eventNameCollection = await _eventManagerDbContext.Events
+                .Where(b => b.Name.ToLower().IndexOf(name.ToLower()) != -1)
+                .ToListAsync(cancellationToken);
+
+            var collection = eventNameCollection.Take(maxTop).ToList();
+            return new EventViewModel(collection);
+        }
+
         public async Task Update(EventDto eventDto, CancellationToken cancellationToken = default)
         {
             var eventDomain = await _eventManagerDbContext.Events.FirstOrDefaultAsync(x => x.Id == eventDto.Id, cancellationToken);
@@ -67,7 +79,7 @@ namespace EventManager.Dal.Repositories
 
             _eventManagerDbContext.Events.Update(eventDomain);
             await _eventManagerDbContext.SaveChangesAsync(cancellationToken);
-             
+
         }
     }
 }

@@ -23,20 +23,20 @@ namespace EventManager.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetTopTen ()
+        public async Task<IActionResult> GetTopTen()
         {
             var e = await _eventRepository.GetTopTen();
             return Ok(e);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Insert ([FromBody] EventDto eventDto)
+        public async Task<IActionResult> Insert([FromBody] EventDto eventDto)
         {
             var e = await _eventRepository.Insert(eventDto);
             return Ok(e);
         }
 
-        [HttpDelete ("{id:int}")]
+        [HttpDelete("{id:int}")]
         public async Task<IActionResult> Remove(int id)
         {
             var e = await _eventRepository.Remove(id);
@@ -45,11 +45,17 @@ namespace EventManager.Controllers
         }
 
         [HttpPut]
-
-        public async Task<IActionResult> Update ([FromBody] EventDto eventDto)
+        public async Task<IActionResult> Update([FromBody] EventDto eventDto)
         {
             await _eventRepository.Update(eventDto);
             return Ok();
+        }
+
+        [HttpGet("{name}")]
+        public async Task<IActionResult> SearchName(string name)
+        {
+            var events = await _eventRepository.SearchName(name);
+            return Ok(events);
         }
     }
 }
