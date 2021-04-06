@@ -9,7 +9,6 @@ import { EventContainerComponent } from './event-container/event-container.compo
 import { UpdateEventComponent } from './update-event/update-event.component';
 import { AddEventComponent } from './add-event/add-event.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-  import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -22,8 +21,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
+    AppRoutingModule,
     FormsModule,
     ReactiveFormsModule
   ],

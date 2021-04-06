@@ -1,4 +1,4 @@
-<div class="wrapper">
+<!-- <div class="wrapper">
     <form class="form-update">
         <label>Name</label>
         <input [(ngModel)]="name" type="text" placeholder="Name" [ngModelOptions]="{standalone: true}" />
@@ -32,4 +32,31 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
+
+
+<div class="add-book-container">
+    <div class="add-book-form">
+      <h1 class="add-book-text">Add event ID: {{event.id}}</h1>
+      <hr class="add-book-underline"/>
+      <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+        <div class="group-form">
+          <label>Name</label>
+          <br/>
+          <input class="form-control" type="text" name="name" formControlName="name" >
+        </div>
+        <div class="group-form">
+          <label>Description</label>
+          <br/>
+          <input class="form-control"  type="text" name="description" formControlName="description" >
+          
+        </div>
+        <div class="group-form">
+          <label>Created By</label>
+          <br/>
+          <input class="form-control"  type="text" name="createById" formControlName="createById">
+         </div>
+        <input class="form-control" type="submit" value="Submit" class="btn">
+      </form>
+    </div>
+  </div>

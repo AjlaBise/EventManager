@@ -1,7 +1,8 @@
 import { Injectable, Output } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import {Event} from './event.model';
+import { Eventt } from './event.model';
+import { Events } from './events.model';
 
 @Injectable({
   providedIn: 'root',
@@ -16,18 +17,28 @@ export class EventService {
 
   constructor(private http: HttpClient){}
 
-  getEvents(): Observable<Event[]> {
+  getEvents(): Observable<Eventt[]> {
     const url = `${this.eventUrl}/gettopten`;
-    return this.http.get<Event[]>(url);
+    return this.http.get<Eventt[]>(url);
   }
 
-  addEvent(event: Event): Observable<Event> {
+  getEvent(id: number): Observable<Events> {
+    const url = `${this.eventUrl}/getbyid/${id}`;
+    return this.http.get<Events>(url);
+  }
+  addEvent(Eventt: Eventt): Observable<Eventt> {
     const url = `${this.eventUrl}/insert`;
-    return this.http.post<Event>(url, event, this.httpOptions);
+    return this.http.post<Eventt>(url, Eventt, this.httpOptions);
   }
 
-  deleteEvent(id: number): Observable<Event> {
+  deleteEvent(id: number): Observable<Eventt> {
     const url = `${this.eventUrl}/remove/${id}`;
-    return this.http.delete<Event>(url);
+    return this.http.delete<Eventt>(url);
+  }
+
+  updateEvent(event: Eventt): Observable<Eventt> {
+    const url = `${this.eventUrl}/update`;
+    console.log(event);
+    return this.http.put<Eventt>(url, event, this.httpOptions);
   }
 }
