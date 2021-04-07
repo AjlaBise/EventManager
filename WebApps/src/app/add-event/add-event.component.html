@@ -1,46 +1,17 @@
-<!-- <div class="wrapper">
-    <form class="form-update">
+<div class="wrapper">
+    <form class="form-update"  (ngSubmit)="onSubmit(checkoutForm.value)">
         <label>Name</label>
-        <input type="text" placeholder="Name"/>
+        <input type="text" name="name" placeholder="Name" formControlName="name"/>
         <label>Description</label>
-        <textarea placeholder="Description"></textarea>
+        <textarea placeholder="Description" name="description" formControlName="description"></textarea>
         <label>User</label>
         <input type="text" placeholder="User"/>
         <label>Start date</label>
-        <input type="date" />
+        <input type="date"/>
         <label>End date</label>
         <input type="date" />
         <div class="btn-container">
-        <button class="btn">Save</button>
-    </div>
+            <button class="btn">Save</button>
+        </div>
     </form>
-</div> -->
-
-<div class="add-book-container">
-    <div class="add-book-form">
-      <h1 class="add-book-text">Add event</h1>
-      <hr class="add-book-underline"/>
-      <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
-        <div class="group-form">
-          <label>Name</label>
-          <br/>
-          <input type="text" name="name" formControlName="name" >
-        </div>
-        <div class="group-form">
-          <label>Description</label>
-          <br/>
-          <input  type="text" name="description" formControlName="description" >
-          
-        </div>
-       
-        <input type="submit" value="Submit" class="btn">
-      </form>
-    </div>
-  </div>
-    <!-- <div class="add-book-preview">
-      <div class="book-item">
-        <span class="book-name">{{checkoutForm.value.name}}</span>
-        <span class="book-author">{{checkoutForm.value.author}}</span>
-        <img src="../../../assets/Medvjedgrad.jpg" class="book-image" >
-        <p class="book-price">{{checkoutForm.value.currrency}} {{checkoutForm.value.price}}.00</p>
-    </div> -->
+</div>

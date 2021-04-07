@@ -7,7 +7,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-add-event',
   templateUrl: './add-event.component.html',
-  styleUrls: ['./add-event.component.scss']
+  styleUrls: ['./add-event.component.css']
 })
 export class AddEventComponent implements OnInit {
 

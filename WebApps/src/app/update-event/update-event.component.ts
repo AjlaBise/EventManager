@@ -8,7 +8,7 @@ import { Events } from '../events.model';
 @Component({
   selector: 'app-update-event',
   templateUrl: './update-event.component.html',
-  styleUrls: ['./update-event.component.scss'],
+  styleUrls: ['./update-event.component.css'],
 })
 export class UpdateEventComponent implements OnInit {
   events: Events;

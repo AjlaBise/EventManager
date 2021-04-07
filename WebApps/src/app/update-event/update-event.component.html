@@ -1,62 +1,18 @@
-<!-- <div class="wrapper">
-    <form class="form-update">
+<div class="wrapper">
+  <h1>Update event ID: {{event.id}}</h1>
+    <form class="form-update"  (ngSubmit)="onSubmit(checkoutForm.value)">
         <label>Name</label>
-        <input [(ngModel)]="name" type="text" placeholder="Name" [ngModelOptions]="{standalone: true}" />
+        <input type="text" name="name" placeholder="Name" formControlName="name"/>
         <label>Description</label>
-        <textarea [(ngModel)]="description" placeholder="Description" [ngModelOptions]="{standalone: true}"></textarea>
+        <textarea placeholder="Description" name="description" formControlName="description"></textarea>
         <label>User</label>
-        <input [(ngModel)]="user" type="text" placeholder="User" [ngModelOptions]="{standalone: true}" />
+        <input type="text" placeholder="User"/>
         <label>Start date</label>
-        <input [(ngModel)]="startDate" type="date" [ngModelOptions]="{standalone: true}" />
+        <input type="date"/>
         <label>End date</label>
-        <input [(ngModel)]="endDate" type="date" [ngModelOptions]="{standalone: true}" />
+        <input type="date" />
         <div class="btn-container">
             <button class="btn">Save</button>
         </div>
     </form>
-    <div class="wrapper-card">
-        <div class="text-container">
-            <p>NAME : </p>
-            <p>{{name}}</p>
-            <p>DESCRIPTION : </p>
-            <p>{{description}}</p>
-            <div class="bottom-div">
-                <p>USER : </p>
-                <p>START DATE : </p>
-                <p>END DATE : </p>            
-            </div>
-            <div class="value-div">
-                <p>{{user}}</p>
-                <p>{{startDate}}</p>
-                <p>{{endDate}}</p>
-            </div>
-        </div>
-    </div>
-</div> -->
-
-
-<div class="add-book-container">
-    <div class="add-book-form">
-      <h1 class="add-book-text">Add event ID: {{event.id}}</h1>
-      <hr class="add-book-underline"/>
-      <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
-        <div class="group-form">
-          <label>Name</label>
-          <br/>
-          <input class="form-control" type="text" name="name" formControlName="name" >
-        </div>
-        <div class="group-form">
-          <label>Description</label>
-          <br/>
-          <input class="form-control"  type="text" name="description" formControlName="description" >
-          
-        </div>
-        <div class="group-form">
-          <label>Created By</label>
-          <br/>
-          <input class="form-control"  type="text" name="createById" formControlName="createById">
-         </div>
-        <input class="form-control" type="submit" value="Submit" class="btn">
-      </form>
-    </div>
-  </div>
+</div>

@@ -1,9 +1,25 @@
-<div class="main-wrapper" *ngFor="let event of events">
-    <div class="wrapper">
-        <div class="text-container" >
+<div class="main-wrapper">
+    <div class="wrapper" *ngFor="let event of events">
+        <div class="text-container">
             <p>{{event.name}}</p>
             <p>{{event.description}}</p>
             <p>{{event.createBy}}</p>
+            <div class="div-Date">
+                <div>
+                    <p>Start date: </p>
+                    <p>End date: </p>
+                </div>
+
+                <div>
+                    <p>{{event.startDate | date}}</p>
+                    <p>{{event.endDate | date}}</p>
+                </div>       
+            </div>
+            <div class="time-div">
+                <span>{{event.startTime | date:'HH:mm'}}</span> -
+                <span>{{event.endTime | date:'HH:mm'}}</span>
+            </div>
+           
         </div>
         <div class="event-buttons">
             <button class="btn" (click)="deleteEvent(event.id)">Delete</button>
@@ -11,4 +27,3 @@
         </div>
     </div>
 </div>
-

@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { EventComponent } from './event/event.component';
-import { EventContainerComponent } from './event-container/event-container.component';
 import { UpdateEventComponent } from './update-event/update-event.component';
 import { AddEventComponent } from './add-event/add-event.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -15,7 +14,6 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     AppComponent,
     NavbarComponent,
     EventComponent,
-    EventContainerComponent,
     UpdateEventComponent,
     AddEventComponent,
   ],
