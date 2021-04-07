@@ -67,44 +67,58 @@ namespace EventManager.Dal.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2021, 4, 7, 1, 43, 33, 531, DateTimeKind.Local).AddTicks(8189),
+                            CreatedAt = new DateTime(2021, 4, 7, 15, 32, 24, 603, DateTimeKind.Local).AddTicks(3171),
                             CreatedById = 1,
                             Description = "Description of online seminar",
                             EndDate = new DateTime(2021, 4, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndTime = new DateTime(2021, 4, 7, 5, 43, 33, 536, DateTimeKind.Local).AddTicks(6170),
+                            EndTime = new DateTime(2021, 4, 7, 19, 32, 24, 607, DateTimeKind.Local).AddTicks(2590),
                             ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ModifiedByUser = "Ajla Bise",
                             Name = "Online seminars",
                             StartDate = new DateTime(2021, 4, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartTime = new DateTime(2021, 4, 7, 1, 43, 33, 536, DateTimeKind.Local).AddTicks(4350)
+                            StartTime = new DateTime(2021, 4, 7, 15, 32, 24, 607, DateTimeKind.Local).AddTicks(1819)
                         },
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2021, 4, 7, 1, 43, 33, 536, DateTimeKind.Local).AddTicks(7086),
+                            CreatedAt = new DateTime(2021, 4, 7, 15, 32, 24, 607, DateTimeKind.Local).AddTicks(3076),
                             CreatedById = 2,
-                            Description = "Description of online seminar II",
+                            Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
                             EndDate = new DateTime(2021, 4, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndTime = new DateTime(2021, 4, 7, 3, 43, 33, 536, DateTimeKind.Local).AddTicks(7208),
+                            EndTime = new DateTime(2021, 4, 7, 17, 32, 24, 607, DateTimeKind.Local).AddTicks(3188),
                             ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ModifiedByUser = "Ajla Bise",
                             Name = "Online seminars II",
                             StartDate = new DateTime(2021, 4, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartTime = new DateTime(2021, 4, 7, 2, 43, 33, 536, DateTimeKind.Local).AddTicks(7171)
+                            StartTime = new DateTime(2021, 4, 7, 16, 32, 24, 607, DateTimeKind.Local).AddTicks(3147)
                         },
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2021, 4, 7, 1, 43, 33, 536, DateTimeKind.Local).AddTicks(7226),
+                            CreatedAt = new DateTime(2021, 4, 7, 15, 32, 24, 607, DateTimeKind.Local).AddTicks(3203),
                             CreatedById = 1,
-                            Description = "Description of online seminar",
+                            Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
                             EndDate = new DateTime(2021, 4, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndTime = new DateTime(2021, 4, 7, 6, 43, 33, 536, DateTimeKind.Local).AddTicks(7264),
+                            EndTime = new DateTime(2021, 4, 7, 20, 32, 24, 607, DateTimeKind.Local).AddTicks(3238),
                             ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ModifiedByUser = "Ajla Bise",
                             Name = "Online seminars",
                             StartDate = new DateTime(2021, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartTime = new DateTime(2021, 4, 7, 5, 43, 33, 536, DateTimeKind.Local).AddTicks(7245)
+                            StartTime = new DateTime(2021, 4, 7, 19, 32, 24, 607, DateTimeKind.Local).AddTicks(3221)
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedAt = new DateTime(2021, 4, 7, 15, 32, 24, 607, DateTimeKind.Local).AddTicks(3243),
+                            CreatedById = 1,
+                            Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+                            EndDate = new DateTime(2021, 4, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndTime = new DateTime(2021, 4, 7, 20, 32, 24, 607, DateTimeKind.Local).AddTicks(3276),
+                            ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ModifiedByUser = "Ajla Bise",
+                            Name = "Karaoke night",
+                            StartDate = new DateTime(2021, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartTime = new DateTime(2021, 4, 7, 19, 32, 24, 607, DateTimeKind.Local).AddTicks(3260)
                         });
                 });
 

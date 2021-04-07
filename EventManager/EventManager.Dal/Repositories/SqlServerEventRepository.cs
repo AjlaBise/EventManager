@@ -4,7 +4,6 @@ using EventManager.Dal.Domain;
 using EventManager.Dal.ViewModel;
 using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -61,7 +60,6 @@ namespace EventManager.Dal.Repositories
                 EndDate = e.EndDate,
                 StartTime = e.StartTime,
                 EndTime = e.EndTime
-
             };
 
             await _eventManagerDbContext.Events.AddAsync(eventDomain, cancellationToken);
