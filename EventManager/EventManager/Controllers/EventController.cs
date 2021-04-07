@@ -25,7 +25,7 @@ namespace EventManager.Controllers
 
         [HttpGet("{name}")]
         public async Task<IActionResult> GetEventsPeriod(string name)
-        { 
+        {
             var e = await _eventRepository.GetEventsPeriod(name);
             return Ok(e);
         }
@@ -40,8 +40,15 @@ namespace EventManager.Controllers
         [HttpPost]
         public async Task<IActionResult> Insert([FromBody] EventDto eventDto)
         {
-            var e = await _eventRepository.Insert(eventDto);
-            return Ok(e);
+            try
+            {
+                var e = await _eventRepository.Insert(eventDto);
+                return Ok(e);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
         }
 
         [HttpDelete("{id:int}")]
@@ -55,8 +62,16 @@ namespace EventManager.Controllers
         [HttpPut]
         public async Task<IActionResult> Update([FromBody] EventDto eventDto)
         {
-            await _eventRepository.Update(eventDto);
-            return Ok();
+            try
+            {
+                await _eventRepository.Update(eventDto);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+
         }
 
         [HttpGet("{name}")]
