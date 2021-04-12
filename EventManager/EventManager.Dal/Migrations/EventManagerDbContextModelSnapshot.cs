@@ -38,9 +38,6 @@ namespace EventManager.Dal.Migrations
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("EndTime")
-                        .HasColumnType("datetime2");
-
                     b.Property<DateTime>("ModifiedAt")
                         .HasColumnType("datetime2");
 
@@ -51,10 +48,10 @@ namespace EventManager.Dal.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("StartDate")
-                        .HasColumnType("datetime2");
+                    b.Property<int>("Repetition")
+                        .HasColumnType("int");
 
-                    b.Property<DateTime>("StartTime")
+                    b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
@@ -67,58 +64,54 @@ namespace EventManager.Dal.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2021, 4, 7, 15, 32, 24, 603, DateTimeKind.Local).AddTicks(3171),
+                            CreatedAt = new DateTime(2021, 4, 12, 21, 12, 11, 717, DateTimeKind.Local).AddTicks(7467),
                             CreatedById = 1,
                             Description = "Description of online seminar",
-                            EndDate = new DateTime(2021, 4, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndTime = new DateTime(2021, 4, 7, 19, 32, 24, 607, DateTimeKind.Local).AddTicks(2590),
+                            EndDate = new DateTime(2021, 4, 18, 21, 12, 11, 721, DateTimeKind.Local).AddTicks(8292),
                             ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ModifiedByUser = "Ajla Bise",
                             Name = "Online seminars",
-                            StartDate = new DateTime(2021, 4, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartTime = new DateTime(2021, 4, 7, 15, 32, 24, 607, DateTimeKind.Local).AddTicks(1819)
+                            Repetition = 0,
+                            StartDate = new DateTime(2021, 4, 12, 21, 12, 11, 721, DateTimeKind.Local).AddTicks(7552)
                         },
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2021, 4, 7, 15, 32, 24, 607, DateTimeKind.Local).AddTicks(3076),
+                            CreatedAt = new DateTime(2021, 4, 12, 21, 12, 11, 721, DateTimeKind.Local).AddTicks(9661),
                             CreatedById = 2,
                             Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-                            EndDate = new DateTime(2021, 4, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndTime = new DateTime(2021, 4, 7, 17, 32, 24, 607, DateTimeKind.Local).AddTicks(3188),
+                            EndDate = new DateTime(2021, 4, 14, 21, 12, 11, 721, DateTimeKind.Local).AddTicks(9732),
                             ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ModifiedByUser = "Ajla Bise",
                             Name = "Online seminars II",
-                            StartDate = new DateTime(2021, 4, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartTime = new DateTime(2021, 4, 7, 16, 32, 24, 607, DateTimeKind.Local).AddTicks(3147)
+                            Repetition = 0,
+                            StartDate = new DateTime(2021, 4, 12, 21, 12, 11, 721, DateTimeKind.Local).AddTicks(9710)
                         },
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2021, 4, 7, 15, 32, 24, 607, DateTimeKind.Local).AddTicks(3203),
+                            CreatedAt = new DateTime(2021, 4, 12, 21, 12, 11, 721, DateTimeKind.Local).AddTicks(9757),
                             CreatedById = 1,
                             Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-                            EndDate = new DateTime(2021, 4, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndTime = new DateTime(2021, 4, 7, 20, 32, 24, 607, DateTimeKind.Local).AddTicks(3238),
+                            EndDate = new DateTime(2021, 4, 18, 21, 12, 11, 721, DateTimeKind.Local).AddTicks(9766),
                             ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ModifiedByUser = "Ajla Bise",
                             Name = "Online seminars",
-                            StartDate = new DateTime(2021, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartTime = new DateTime(2021, 4, 7, 19, 32, 24, 607, DateTimeKind.Local).AddTicks(3221)
+                            Repetition = 1,
+                            StartDate = new DateTime(2021, 4, 12, 21, 12, 11, 721, DateTimeKind.Local).AddTicks(9762)
                         },
                         new
                         {
                             Id = 4,
-                            CreatedAt = new DateTime(2021, 4, 7, 15, 32, 24, 607, DateTimeKind.Local).AddTicks(3243),
+                            CreatedAt = new DateTime(2021, 4, 12, 21, 12, 11, 721, DateTimeKind.Local).AddTicks(9771),
                             CreatedById = 1,
                             Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-                            EndDate = new DateTime(2021, 4, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndTime = new DateTime(2021, 4, 7, 20, 32, 24, 607, DateTimeKind.Local).AddTicks(3276),
+                            EndDate = new DateTime(2021, 4, 17, 21, 12, 11, 721, DateTimeKind.Local).AddTicks(9779),
                             ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ModifiedByUser = "Ajla Bise",
                             Name = "Karaoke night",
-                            StartDate = new DateTime(2021, 4, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartTime = new DateTime(2021, 4, 7, 19, 32, 24, 607, DateTimeKind.Local).AddTicks(3260)
+                            Repetition = 0,
+                            StartDate = new DateTime(2021, 4, 12, 21, 12, 11, 721, DateTimeKind.Local).AddTicks(9775)
                         });
                 });
 
@@ -141,9 +134,6 @@ namespace EventManager.Dal.Migrations
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("EndTime")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("FirstName")
                         .HasColumnType("nvarchar(max)");
 
@@ -159,9 +149,6 @@ namespace EventManager.Dal.Migrations
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("StartTime")
-                        .HasColumnType("datetime2");
-
                     b.HasKey("Id");
 
                     b.HasIndex("CreatedByUserId");
@@ -175,12 +162,10 @@ namespace EventManager.Dal.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             CreatedById = 0,
                             EndDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstName = "Ajla",
                             LastName = "Bise",
                             ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            StartDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -188,12 +173,10 @@ namespace EventManager.Dal.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             CreatedById = 0,
                             EndDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstName = "Arman",
                             LastName = "Bise",
                             ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            StartDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -201,12 +184,10 @@ namespace EventManager.Dal.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             CreatedById = 0,
                             EndDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstName = "Mahir",
                             LastName = "Skula",
                             ModifiedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartTime = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            StartDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
 

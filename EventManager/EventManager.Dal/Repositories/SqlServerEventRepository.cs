@@ -4,6 +4,7 @@ using EventManager.Dal.Domain;
 using EventManager.Dal.ViewModel;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -27,7 +28,7 @@ namespace EventManager.Dal.Repositories
             return new EventViewModel(e);
         }
 
-        public async Task<EventViewModel> GetEventsPeriod(string eventName, CancellationToken cancellationToken = default)
+        public async Task<List<string>> GetEventsPeriod(string eventName, CancellationToken cancellationToken = default)
         {
             const int maxTop = 10;
 
@@ -37,8 +38,14 @@ namespace EventManager.Dal.Repositories
 
             var collection = eventNameCollection.Take(maxTop).ToList();
 
-            return new EventViewModel(collection);
+            List<string> listOfDates = new List<string>();
 
+            foreach(var date in collection)
+            {
+                listOfDates.Add(date.StartDate.ToString());
+            }
+
+            return listOfDates;
         }
 
         public async Task<EventViewModel> GetTopTen(CancellationToken cancellationToken = default)
@@ -52,14 +59,12 @@ namespace EventManager.Dal.Repositories
         {
             var eventDomain = new Event
             {
-                Id = e.Id,
                 Name = e.Name,
                 Description = e.Description,
                 CreatedById = e.CreateById,
                 StartDate = e.StartDate,
                 EndDate = e.EndDate,
-                StartTime = e.StartTime,
-                EndTime = e.EndTime
+                Repetition = e.Repetition
             };
 
             await _eventManagerDbContext.Events.AddAsync(eventDomain, cancellationToken);
@@ -117,15 +122,14 @@ namespace EventManager.Dal.Repositories
 
         public async Task Update(EventDto eventDto, CancellationToken cancellationToken = default)
         {
-            var eventDomain = await _eventManagerDbContext.Events.FirstOrDefaultAsync(x => x.Id == eventDto.Id, cancellationToken);
+            var eventDomain = await _eventManagerDbContext.Events
+                .FirstOrDefaultAsync(x => x.Name == eventDto.Name, cancellationToken);
 
-            eventDomain.Id = eventDto.Id;
+            
             eventDomain.Name = eventDto.Name;
             eventDomain.Description = eventDto.Description;
             eventDomain.StartDate = eventDto.StartDate;
             eventDomain.EndDate = eventDto.EndDate;
-            eventDomain.StartTime = eventDto.StartTime;
-            eventDomain.EndTime = eventDto.EndTime;
 
             _eventManagerDbContext.Events.Update(eventDomain);
             await _eventManagerDbContext.SaveChangesAsync(cancellationToken);

@@ -29,10 +29,9 @@ namespace EventManager.Dal.Configuration
                               CreatedAt = DateTime.Now,
                               CreatedById = 1,
                               ModifiedByUser = "Ajla Bise",
-                              StartDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day).AddDays(2),
-                              StartTime = DateTime.Now.ToLocalTime(),
-                              EndDate =  new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day).AddDays(6),
-                              EndTime =DateTime.Now.ToLocalTime().AddHours(4) ,
+                              StartDate = DateTime.Now,
+                              EndDate = DateTime.Now.AddDays(6),
+                              Repetition = 0,
                     },
 
                     new Event {
@@ -46,10 +45,9 @@ namespace EventManager.Dal.Configuration
                             CreatedAt = DateTime.Now,
                             CreatedById = 2 ,
                             ModifiedByUser = "Ajla Bise",
-                            StartDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day).AddDays(2),
-                            StartTime = DateTime.Now.ToLocalTime().AddHours(1) ,
-                            EndDate =  new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day).AddDays(10),
-                            EndTime = DateTime.Now.ToLocalTime().AddHours(2) ,
+                            StartDate = DateTime.Now,
+                            EndDate = DateTime.Now.AddDays(2),
+                            Repetition = 0,
                     },
 
                      new Event {
@@ -57,16 +55,15 @@ namespace EventManager.Dal.Configuration
                               Name = "Online seminars",
                               Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."+
                               " Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"+
-                              " when an unknown printer took a galley of type and scrambled it to make a type specimen book."+ 
+                              " when an unknown printer took a galley of type and scrambled it to make a type specimen book."+
                               "It has survived not only five centuries, but also the leap into electronic typesetting," +
                               " remaining essentially unchanged.",
                               CreatedAt = DateTime.Now,
                               CreatedById = 1,
                               ModifiedByUser = "Ajla Bise",
-                              StartDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day),
-                              StartTime = DateTime.Now.ToLocalTime().AddHours(4) ,
-                              EndDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day).AddDays(5),
-                              EndTime= DateTime.Now.ToLocalTime().AddHours(5) ,
+                              StartDate = DateTime.Now,
+                              EndDate = DateTime.Now.AddDays(6),
+                              Repetition = 1
                      },
                       new Event {
                               Id = 4,
@@ -79,10 +76,9 @@ namespace EventManager.Dal.Configuration
                               CreatedAt = DateTime.Now,
                               CreatedById = 1,
                               ModifiedByUser = "Ajla Bise",
-                              StartDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day),
-                              StartTime = DateTime.Now.ToLocalTime().AddHours(4) ,
-                              EndDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day).AddDays(5),
-                              EndTime= DateTime.Now.ToLocalTime().AddHours(5) ,
+                              StartDate = DateTime.Now,
+                              EndDate = DateTime.Now.AddDays(5),
+                              Repetition = 0
                      },
                 });
         }

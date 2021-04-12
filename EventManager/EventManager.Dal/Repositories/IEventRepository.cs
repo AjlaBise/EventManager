@@ -10,7 +10,7 @@ namespace EventManager.Dal.Repositories
     {
         Task<EventViewModel> GetTopTen(CancellationToken cancellationToken = default);
 
-        Task<EventViewModel> GetEventsPeriod(string eventName, CancellationToken cancellationToken = default);
+        Task<List<string>> GetEventsPeriod(string eventName, CancellationToken cancellationToken = default);
 
         Task<EventViewModel> GetById(int id, CancellationToken cancellationToken = default);
 
