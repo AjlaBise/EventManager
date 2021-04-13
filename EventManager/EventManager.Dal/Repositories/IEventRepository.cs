@@ -1,4 +1,5 @@
-﻿using EventManager.Dal.ViewModel;
+﻿using EventManager.Dal.Domain;
+using EventManager.Dal.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Threading;
@@ -25,6 +26,9 @@ namespace EventManager.Dal.Repositories
         Task<EventViewModel> SearchByStartDate(DateTime startDate, CancellationToken cancellationToken = default);
 
         Task<EventViewModel> SearchByEndDate(DateTime endDate, CancellationToken cancellationToken = default);
+
+        Task<EventViewModel> MonthlyView(CancellationToken cancellationToken = default);
+        
 
     }
 }

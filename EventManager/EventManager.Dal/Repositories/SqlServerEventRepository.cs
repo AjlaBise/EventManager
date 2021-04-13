@@ -40,7 +40,7 @@ namespace EventManager.Dal.Repositories
 
             List<string> listOfDates = new List<string>();
 
-            foreach(var date in collection)
+            foreach (var date in collection)
             {
                 listOfDates.Add(date.StartDate.ToString());
             }
@@ -71,6 +71,19 @@ namespace EventManager.Dal.Repositories
             await _eventManagerDbContext.SaveChangesAsync(cancellationToken);
 
             return new EventViewModel(eventDomain);
+        }
+
+        public async Task<EventViewModel> MonthlyView(CancellationToken cancellationToken = default)
+        {
+            var eventsInDb = await _eventManagerDbContext.Events.ToListAsync();
+
+            DateTime date = DateTime.Now;
+
+
+            var monthlyList = eventsInDb.Where(x => x.StartDate > date && x.StartDate < date.AddDays(30))
+            .ToList();
+
+            return new EventViewModel(monthlyList);
         }
 
         public async Task<bool> Remove(int id, CancellationToken cancellationToken = default)
@@ -125,7 +138,6 @@ namespace EventManager.Dal.Repositories
             var eventDomain = await _eventManagerDbContext.Events
                 .FirstOrDefaultAsync(x => x.Name == eventDto.Name, cancellationToken);
 
-            
             eventDomain.Name = eventDto.Name;
             eventDomain.Description = eventDto.Description;
             eventDomain.StartDate = eventDto.StartDate;

@@ -37,6 +37,14 @@ namespace EventManager.Controllers
             return Ok(e);
         }
 
+
+        [HttpGet]
+        public async Task<IActionResult> MonthlyView()
+        {
+             
+            return Ok(await _eventRepository.MonthlyView());
+        }
+
         [HttpPost]
         public async Task<IActionResult> Insert([FromBody] EventDto eventDto)
         {
