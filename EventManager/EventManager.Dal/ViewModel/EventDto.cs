@@ -1,4 +1,5 @@
 ﻿using EventManager.Dal.Domain;
+using EventManager.Dal.Helper;
 using System;
 
 namespace EventManager.Dal.ViewModel
@@ -23,7 +24,9 @@ namespace EventManager.Dal.ViewModel
 
         public DateTime ModifiedAt { get; set; }
 
-        public int? Repetition { get; set; } 
+        public int? Repetition { get; set; }
+
+        public TimePeriod TimePeriod { get; set; }
 
 
         public EventDto()
@@ -41,7 +44,7 @@ namespace EventManager.Dal.ViewModel
             CreatedAt = e.CreatedAt;
             ModifiedByUser = e.ModifiedByUser;
             Repetition = e.Repetition;
-
+            TimePeriod = e.TimePeriod;
         }
     }
 }

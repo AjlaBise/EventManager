@@ -22,6 +22,46 @@ namespace EventManager.Dal.Repositories
             _mapper = mapper;
         }
 
+        public List<string> FindOccurrences(int id, CancellationToken cancellation = default)
+        {
+            List<string> listOfOccurrences = new List<string>();
+
+            var eventDto = _eventManagerDbContext.Events.Where(e => e.Id == id).FirstOrDefault();
+
+            if (eventDto.TimePeriod == Helper.TimePeriod.Daily)
+            {
+                for(int i=1; i<= eventDto.Repetition; i++)
+                {
+                    listOfOccurrences.Add(eventDto.StartDate.AddDays(7 * i).ToLongDateString());
+                    listOfOccurrences.Add(eventDto.EndDate.AddDays(7).ToLongDateString());
+                    var startDate = eventDto.StartDate.AddDays(i).ToShortDateString();
+                    var endDate = eventDto.EndDate.AddDays(i + 7).ToShortDateString();
+                    var startTime = eventDto.StartDate.AddHours(1).ToShortTimeString();
+                    var endTime = eventDto.EndDate.AddHours(2).ToShortTimeString();
+                    string concated = String.Concat(startDate, "-", endDate, "( ", startTime, " - ", endTime, ")");
+                    listOfOccurrences.Add(concated);
+
+
+                }
+                return listOfOccurrences;
+            }
+            else
+            {
+                for (int i = 1; i <= eventDto.Repetition; i++)
+                {
+                    listOfOccurrences.Add(eventDto.StartDate.AddDays(7*i).ToLongDateString());
+                    listOfOccurrences.Add(eventDto.EndDate.AddDays(i+7).ToLongDateString());
+                    var startDate = eventDto.StartDate.AddDays(i).ToShortDateString();
+                    var endDate = eventDto.EndDate.AddDays(i).ToShortDateString();
+                    var startTime = eventDto.StartDate.AddHours(1).ToShortTimeString();
+                    var endTime = eventDto.EndDate.AddHours(2).ToShortTimeString();
+                    string concated = String.Concat(startDate, "-", endDate,"( ",startTime, " - ", endTime,")");
+                    listOfOccurrences.Add(concated);
+                }
+                return listOfOccurrences;
+            }
+        }
+
         public async Task<EventViewModel> GetById(int id, CancellationToken cancellationToken = default)
         {
             var e = await _eventManagerDbContext.Events.FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
@@ -64,7 +104,8 @@ namespace EventManager.Dal.Repositories
                 CreatedById = e.CreateById,
                 StartDate = e.StartDate,
                 EndDate = e.EndDate,
-                Repetition = e.Repetition
+                Repetition = e.Repetition,
+                TimePeriod = e.TimePeriod
             };
 
             await _eventManagerDbContext.Events.AddAsync(eventDomain, cancellationToken);
@@ -78,7 +119,6 @@ namespace EventManager.Dal.Repositories
             var eventsInDb = await _eventManagerDbContext.Events.ToListAsync();
 
             DateTime date = DateTime.Now;
-
 
             var monthlyList = eventsInDb.Where(x => x.StartDate > date && x.StartDate < date.AddDays(30))
             .ToList();

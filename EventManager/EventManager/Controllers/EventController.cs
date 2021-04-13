@@ -102,5 +102,15 @@ namespace EventManager.Controllers
             var events = await _eventRepository.SearchByEndDate(endDate);
             return Ok(events);
         }
+        
+        
+        [HttpGet]
+        public IActionResult FindOccurrences(int id)
+        {
+            var events =  _eventRepository.FindOccurrences(id);
+            return Ok(events);
+        }
+
+
     }
 }

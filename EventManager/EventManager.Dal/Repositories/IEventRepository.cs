@@ -28,6 +28,8 @@ namespace EventManager.Dal.Repositories
         Task<EventViewModel> SearchByEndDate(DateTime endDate, CancellationToken cancellationToken = default);
 
         Task<EventViewModel> MonthlyView(CancellationToken cancellationToken = default);
+
+        List<string> FindOccurrences(int id, CancellationToken cancellation = default);
         
 
     }
