@@ -17,7 +17,7 @@ namespace EventManager.Dal.Repositories
 
         Task<EventViewModel> Insert(EventDto e, CancellationToken cancellationToken = default);
 
-        Task Update(EventDto eventDto, CancellationToken cancellationToken = default);
+        Task Update(EventDto e, CancellationToken cancellationToken = default);
 
         Task<bool> Remove(int id, CancellationToken cancellationToken = default);
 
@@ -30,7 +30,7 @@ namespace EventManager.Dal.Repositories
         Task<EventViewModel> MonthlyView(CancellationToken cancellationToken = default);
 
         List<string> FindOccurrences(int id, CancellationToken cancellation = default);
-        
+
 
     }
 }

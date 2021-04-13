@@ -12,7 +12,6 @@ namespace EventManager.Dal.Mapper
         public AutoMapping()
         {
             CreateMap<Event, EventDto>().ReverseMap();
-
             CreateMap<List<Event>, List<EventDto>>().ReverseMap();
         }
 

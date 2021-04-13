@@ -6,7 +6,6 @@ namespace EventManager.Dal.ViewModel
 {
     public class EventDto
     {
-        
 
         public string Name { get; set; }
 

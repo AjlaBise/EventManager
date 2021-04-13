@@ -30,17 +30,14 @@ namespace EventManager.Dal.Repositories
 
             if (eventDto.TimePeriod == Helper.TimePeriod.Daily)
             {
-                for(int i=1; i<= eventDto.Repetition; i++)
+                for (int i = 1; i <= eventDto.Repetition; i++)
                 {
                     listOfOccurrences.Add(eventDto.StartDate.AddDays(7 * i).ToLongDateString());
-                    listOfOccurrences.Add(eventDto.EndDate.AddDays(7).ToLongDateString());
                     var startDate = eventDto.StartDate.AddDays(i).ToShortDateString();
-                    var endDate = eventDto.EndDate.AddDays(i + 7).ToShortDateString();
                     var startTime = eventDto.StartDate.AddHours(1).ToShortTimeString();
                     var endTime = eventDto.EndDate.AddHours(2).ToShortTimeString();
-                    string concated = String.Concat(startDate, "-", endDate, "( ", startTime, " - ", endTime, ")");
+                    string concated = String.Concat(startDate, "-", startTime, " - ", endTime, ")");
                     listOfOccurrences.Add(concated);
-
 
                 }
                 return listOfOccurrences;
@@ -49,13 +46,13 @@ namespace EventManager.Dal.Repositories
             {
                 for (int i = 1; i <= eventDto.Repetition; i++)
                 {
-                    listOfOccurrences.Add(eventDto.StartDate.AddDays(7*i).ToLongDateString());
-                    listOfOccurrences.Add(eventDto.EndDate.AddDays(i+7).ToLongDateString());
+                    listOfOccurrences.Add(eventDto.StartDate.AddDays(7 * i).ToLongDateString());
+                    listOfOccurrences.Add(eventDto.EndDate.AddDays(i + 7).ToLongDateString());
                     var startDate = eventDto.StartDate.AddDays(i).ToShortDateString();
                     var endDate = eventDto.EndDate.AddDays(i).ToShortDateString();
                     var startTime = eventDto.StartDate.AddHours(1).ToShortTimeString();
                     var endTime = eventDto.EndDate.AddHours(2).ToShortTimeString();
-                    string concated = String.Concat(startDate, "-", endDate,"( ",startTime, " - ", endTime,")");
+                    string concated = String.Concat(startDate, "-", endDate, "( ", startTime, " - ", endTime, ")");
                     listOfOccurrences.Add(concated);
                 }
                 return listOfOccurrences;
@@ -173,19 +170,20 @@ namespace EventManager.Dal.Repositories
             return new EventViewModel(collection);
         }
 
-        public async Task Update(EventDto eventDto, CancellationToken cancellationToken = default)
+        public async Task Update(EventDto e, CancellationToken cancellationToken = default)
         {
-            var eventDomain = await _eventManagerDbContext.Events
-                .FirstOrDefaultAsync(x => x.Name == eventDto.Name, cancellationToken);
+            var eventDomain = await _eventManagerDbContext.Events.FirstOrDefaultAsync(x => x.Name == e.Name, cancellationToken);
 
-            eventDomain.Name = eventDto.Name;
-            eventDomain.Description = eventDto.Description;
-            eventDomain.StartDate = eventDto.StartDate;
-            eventDomain.EndDate = eventDto.EndDate;
+            eventDomain.Name = e.Name;
+            eventDomain.Description = e.Description;
+            eventDomain.CreatedById = e.CreateById;
+            eventDomain.StartDate = e.StartDate;
+            eventDomain.EndDate = e.EndDate;
+            eventDomain.Repetition = e.Repetition;
+            eventDomain.TimePeriod = e.TimePeriod;
 
             _eventManagerDbContext.Events.Update(eventDomain);
             await _eventManagerDbContext.SaveChangesAsync(cancellationToken);
-
         }
     }
 }
